@@ -80,21 +80,15 @@ let users = [
     {name: 'olya', age: 31, status: false},
     {name: 'max', age: 31, status: true}
 ];
-for(let x of users){
-    for (let key in x) {
-        if(x[key] === true) console.log( x,'  status == true');
-    }
+for(let x of  users){
+    if(x.status) console.log( x,'  status == true');
 }
 console.log('---------------------------------------------------------------------')
 for(let x of users){
-    for (let key in x) {
-        if(x[key] === false) console.log(x, '  status == false');
-    }
+    if(!x.status) console.log( x,'  status == false');
 }
 console.log('---------------------------------------------------------------------')
 for(let x of users){
-    for (let key in x) {
-        if(x[key] >= 30) console.log(x, '  age>=30');
-    }
+    if(x.age>=30) console.log( x,'  age >=30');
 }
 

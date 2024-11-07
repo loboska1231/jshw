@@ -1,4 +1,4 @@
-//-------------------TASK 1--------------------
+//-------------------TASK #y7crMeFwHcS --------------------
 for (let i =0;i<=9;i++){
     document.write(`
        <div>
@@ -6,7 +6,7 @@ for (let i =0;i<=9;i++){
        </div>
     `);
 }
-//-------------------TASK 2--------------------
+//-------------------TASK #TYj7ncx--------------------
 for (let i =0;i<=9;i++){
     document.write(`
        <div>
@@ -14,20 +14,20 @@ for (let i =0;i<=9;i++){
        </div>
     `);
 }
-//--------------------TASK 3-------------------------
+//--------------------TASK #uzkt71dp-------------------------
 
 let i = 0;
 while (i <= 19) {
     document.write(`<h1> TASK3</h1>`);
     i++
 }
-//-------------------TASK 4--------------------
+//-------------------TASK #OeT7t3uUMFi--------------------
 i = 0;
 while (i <= 19) {
     document.write(`<h1> TASK3 ${i}</h1>`);
     i++
 }
-//------------------TASK 5---------------------
+//------------------TASK #vLSZKMlO---------------------
 
 let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
 document.write(`<ul>`);
@@ -35,7 +35,7 @@ for(let x of listOfItems){
     document.write(`<li>${x}</li>`);
 }
 document.write(`</ul>`);
-//------------------TASK 6---------------------
+//------------------TASK #Hdjws7E---------------------
 let products = [
     {
         title: 'milk',
@@ -66,7 +66,7 @@ for(let x of products){
         </div>
     `);
 }
-//------------------TASK 7---------------------
+//------------------TASK #4WrHwFTEop0---------------------
 let users = [
     {name: 'vasya', age: 31, status: false},
     {name: 'petya', age: 30, status: true},

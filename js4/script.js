@@ -113,3 +113,4 @@ let banknotes = [
     {currency:'USD', value:41},
     {currency:'EUR',value:44}];
 console.log(exchange(10000,banknotes,'USD'));
+//1

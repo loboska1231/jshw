@@ -1,23 +1,22 @@
 // #I2XsG6f
 function TP(a,b)
 {
-    a * b;
+    return a * b;
 }
 console.log(TP(5,5));
 
 // #ETGAxbEn8l
 function Scircle(r)
 {
-    3.14 * r * r;
+    return 3.14 * r * r;
 }
 console.log(Scircle(5));
 
 // #Mbiz5K4yFe7
 function Scilindre(r,h) {
-    Scircle(r) * h;
+    return 2*Scircle(r) +2*3.14*r*h;
 }
 console.log(Scilindre(5,2));
-//Scilindre = (r,h)=>3.14*r*r*h;
 
 // #SIdMd0hQ
 function printMass(...x){

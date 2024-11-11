@@ -28,8 +28,9 @@ printMass(mass);
 // #59g0IsA
 function printP(text) {
     document.write(`<p>${text}</p>`);
+    console.log('printP ==>' + text);
 }
-let test ='foo';
+let test ='test'; // заменил значение переменной test с 'foo' на 'test' потому что стринга
 printP('plus');
 printP(test);
 
@@ -40,24 +41,28 @@ function printUL(text){
     document.write(`<li>${text}</li>`);
     document.write(`<li>${text}</li>`);
     document.write(`</ul>`);
+    console.log('printUL ==>' + text);
 }
-printUL(test);
+printUL(test); // ::32 let test = 'test'
 
 // #0Kxco1edSN
 function printULn(text, num){
     document.write(`<ul>`);
     for(let i =0;i<num;i++){
         document.write(`<li>${text}</li>`);
+        console.log('printULn ==>' + text + ' i = '+i);
     }
     document.write(`</ul>`);
+    console.log('printULn ==>' + text);
 }
-printULn(test, 10);
+printULn(test, 20);// ::32 let test = 'test'
 
 // #gEFoxMMO
 function printMassInUL(x){
     document.write(`<ul>`);
     for(const t of x ){
         document.write(`<li>${t}</li>`)
+        console.log('printMassInUL ==>', t );
     }
     document.write(`</ul>`);
 }
@@ -71,6 +76,7 @@ function printDict(x){
             <div>
                 <p>${t}  ::  ${x[t]}</p>
             </div> `);
+        console.log('printDict==>' + t + ' x[t] = '+x[t]);
     }
 }
 let dict = {
@@ -84,11 +90,12 @@ printDict(dict);
 function min(mass){
     let minIdx = 0;
     for(let i=1;i<mass.length;i++ ){
-        if(minIdx> mass[i])minIdx = i;
+        if(mass[minIdx]> mass[i])minIdx = i;
     }
     return mass[minIdx];
 }
-console.log(min([0,0,2,2,1,421,412,4,99919,-1]));
+console.log(min([1,0,-1,0,-500,3,4,5,6]));
+// виправив помилку із мінімумом, було порівняння із самим minIdx, а не з mass[minIdx]
 
 // #EKRNVPM
 function sum(arr){

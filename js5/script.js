@@ -20,7 +20,7 @@ printMass(mass);
 
 // #59g0IsA
 printP  = (text)=> document.write(`<p>${text}</p>`);
-let test ='foo';
+let test ='test'; // заменил значение переменной test с 'foo' на 'test'
 printP('plus');
 printP(test);
 
@@ -29,26 +29,29 @@ printUL = (text)=>{
     document.write(`<ul>`);
     document.write(`<li>${text}</li>`);
     document.write(`<li>${text}</li>`);
+    console.log('printULn ==> ', text )
     document.write(`<li>${text}</li>`);
     document.write(`</ul>`);
 }
-printUL(test);
+printUL(test);  // ::23 let test = 'test'
 
 // #0Kxco1edSN
 printULn = (text, num)=>{
     document.write(`<ul>`);
     for(let i =0;i<num;i++){
         document.write(`<li>${text}</li>`);
+        console.log('printULn ==> ', text,'  - idx -  ',i );
     }
     document.write(`</ul>`);
 }
-printULn(test, 10);
+printULn(test, 10); // ::23 let test = 'test'
 
 // #gEFoxMMO
 printMassInUL = (x)=>{
     document.write(`<ul>`);
     for(const t of x ){
         document.write(`<li>${t}</li>`)
+        console.log('printMassInUL ==> ', t);
     }
     document.write(`</ul>`);
 }
@@ -62,6 +65,7 @@ printDict = (x)=>{
             <div>
                 <p>${t}  ::  ${x[t]}</p>
             </div> `);
+        console.log('printDict ==> ', t, '  --  ', x[t]);
     }
 }
 let dict = {

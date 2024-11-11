@@ -75,11 +75,11 @@ printDict(dict);
 min = (mass)=>{
     let minIdx = 0;
     for(let i=1;i<mass.length;i++ ){
-        if(minIdx> mass[i])minIdx = i;
+        if(mass[minIdx]> mass[i])minIdx = i;
     }
     return mass[minIdx];
 }
-console.log(min([0,0,2,2,1,421,412,4,99919,-1]));
+console.log(min([0,0,2,2,1,421,412,4,99919,-1,-500,-499]));
 
 // #EKRNVPM
 sum = (arr)=>{

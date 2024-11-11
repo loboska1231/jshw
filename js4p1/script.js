@@ -30,7 +30,7 @@ function printP(text) {
     document.write(`<p>${text}</p>`);
     console.log('printP ==>' + text);
 }
-let test ='test'; // заменил значение переменной test с 'foo' на 'test' потому что стринга
+let test ='test'; // заменил значение переменной test с 'foo' на 'test'
 printP('plus');
 printP(test);
 
@@ -43,7 +43,7 @@ function printUL(text){
     document.write(`</ul>`);
     console.log('printUL ==>' + text);
 }
-printUL(test); // ::32 let test = 'test'
+printUL(test);
 
 // #0Kxco1edSN
 function printULn(text, num){
@@ -55,8 +55,7 @@ function printULn(text, num){
     document.write(`</ul>`);
     console.log('printULn ==>' + text);
 }
-printULn(test, 20);// ::32 let test = 'test'
-
+printULn(test, 20);
 // #gEFoxMMO
 function printMassInUL(x){
     document.write(`<ul>`);

@@ -33,7 +33,7 @@ printUL = (text)=>{
     document.write(`<li>${text}</li>`);
     document.write(`</ul>`);
 }
-printUL(test);  // ::23 let test = 'test'
+printUL(test);
 
 // #0Kxco1edSN
 printULn = (text, num)=>{
@@ -44,7 +44,7 @@ printULn = (text, num)=>{
     }
     document.write(`</ul>`);
 }
-printULn(test, 10); // ::23 let test = 'test'
+printULn(test, 10);
 
 // #gEFoxMMO
 printMassInUL = (x)=>{

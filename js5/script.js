@@ -9,7 +9,6 @@ console.log(Scircle(5));
 // #Mbiz5K4yFe7
 Scilindre = (r,h)=>2*Scircle(r)+2*3.14*r*h;
 console.log(Scilindre(5,2));
-//Scilindre = (r,h)=>3.14*r*r*h;
 
 // #SIdMd0hQ
 printMass = (...x)=> {
@@ -20,7 +19,7 @@ printMass(mass);
 
 // #59g0IsA
 printP  = (text)=> document.write(`<p>${text}</p>`);
-let test ='test'; // заменил значение переменной test с 'foo' на 'test'
+let test ='test_test';
 printP('plus');
 printP(test);
 
@@ -29,7 +28,7 @@ printUL = (text)=>{
     document.write(`<ul>`);
     document.write(`<li>${text}</li>`);
     document.write(`<li>${text}</li>`);
-    console.log('printULn ==> ', text )
+    //console.log('printULn ==> ', text )
     document.write(`<li>${text}</li>`);
     document.write(`</ul>`);
 }
@@ -37,26 +36,38 @@ printUL(test);
 
 // #0Kxco1edSN
 printULn = (text, num)=>{
-    document.write(`<ul>`);
-    for(let i =0;i<num;i++){
-        document.write(`<li>${text}</li>`);
-        console.log('printULn ==> ', text,'  - idx -  ',i );
+    if(num == null || num ===3 ){
+        printUL(text);
+    } else if( num <=0 || typeof num !== 'number'){
+        throw Error(' num is less of equivalent 0 or typeOf num is not integer ')
     }
-    document.write(`</ul>`);
+    else{
+        document.write(`<ul>`);
+        for(let i =0;i<num;i++){
+            document.write(`<li>${text}</li>`);
+            //console.log('printULn ==> ', text,'  - idx -  ',i );
+        }
+        document.write(`</ul>`);
+    }
 }
 printULn(test, 10);
+printULn(test, 2);
+printULn(test);
+//printULn(test, '1');
+//printULn(test, 0);
 
 // #gEFoxMMO
 printMassInUL = (x)=>{
     document.write(`<ul>`);
     for(const t of x ){
         document.write(`<li>${t}</li>`)
-        console.log('printMassInUL ==> ', t);
+        //console.log('printMassInUL ==> ', t);
     }
     document.write(`</ul>`);
 }
 
 printMassInUL([1,2,-3,'true',true,false]);
+printMassInUL('21312');
 
 // #bovDJDTIjt
 printDict = (x)=>{
@@ -65,7 +76,7 @@ printDict = (x)=>{
             <div>
                 <p>${t}  ::  ${x[t]}</p>
             </div> `);
-        console.log('printDict ==> ', t, '  --  ', x[t]);
+       // console.log('printDict ==> ', t, '  --  ', x[t]);
     }
 }
 let dict = {
@@ -82,6 +93,12 @@ min = (mass)=>{
         if(mass[minIdx]> mass[i])minIdx = i;
     }
     return mass[minIdx];
+
+    // let min = mass[0];
+    // for( let t of mass){
+    //     if(min>t) min = t;
+    // }
+    // return min;
 }
 console.log(min([0,0,2,2,1,421,412,4,99919,-1,-500,-499]));
 
@@ -94,6 +111,9 @@ sum = (arr)=>{
     return result;
 }
 console.log(sum([2,2,2,2,-4,99,1]));
+//console.log(sum([2,2,2,2,-4,'99',1])); NaN
+
+
 
 // #kpsbSQCt2Lf
 swap = (arr,idx1,idx2)=>{

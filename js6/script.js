@@ -7,18 +7,30 @@ strMass.forEach(a=> console.log(a.length))
 // #8lld9HMxXWB
 // - Перевести до великого регістру наступні стрінгові значення
 // 'hello world', 'lorem ipsum', 'javascript is cool'
-let UCase = ['hello world', 'lorem ipsum', 'javascript is cool'];
-UCase.forEach(value => console.log(value.toUpperCase()))
+let UpperCase = ['hello world', 'lorem ipsum', 'javascript is cool'];
+UpperCase.forEach(value => console.log(value.toUpperCase()))
+
 // #ClDsAm7xba7
 // - Перевести до нижнього регістру настипні стрінгові значення
 // 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
-let LCase = ['HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'];
-LCase.forEach(value => console.log(value.toLowerCase()))
+let LowerCase = ['HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'];
+LowerCase.forEach(value => console.log(value.toLowerCase()))
 
 // #0b89BkYZwu
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
-let str1 = ' dirty string   '
-console.log(str1.trim())
+let str1 = ' dirty string   ';
+let i,j;
+for (i = 0; i < str1.length; i++) {
+    if(str1[i]  !== ' ') break;
+}
+let res = str1.slice(i);
+for (j=res.length-1;j>0;j--) {
+    if(str1[j]  !== ' ') break;
+}
+res = res.slice(0,j);
+console.log(res,res.length);
+//console.log(str1.trim());
+
 
 //     #bfoJuse4ZzP
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.

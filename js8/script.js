@@ -3,37 +3,34 @@
 // Додати перевірки на undefined, null, NaN.
 // Подумати і реалізувати логіку, в якій кінцевий об'єкт буде мати функції,які в нього були до цього моменту.
 function deepCopy(obj) {
-    let copy = JSON.parse(JSON.stringify(obj));
     if(obj){
-        let funcs = [];
-        for(let t in obj){
-            if (typeof obj[t] === 'function'){
-                const fucnClone = obj[t].bind();
-                funcs.push(fucnClone);
-            }
+        let copy = JSON.parse(JSON.stringify(obj));
+        for(let key in obj){
+            if(typeof obj[key] ==='function') copy[key] = obj[key].bind();
         }
-        for(let f of funcs){
-            copy[f] = funcs.funcClone;
-        }
+        // убрал масив, "создаю" поле с key и записываю в него функцию через bind
         return copy;
     }
-    else console.log('null | NaN | undefined')
+    else console.log('null | NaN | undefined | false')
 }
 
-let user = {
+let user1 = {
     name: 'asd',
     age: '1231',
     status: true,
+    nums:[1,232,13,12,3412,124,12,],
     pou(){
-        console.log(this);
+        console.log(name);
     }
-}
-let t = deepCopy(user);
-console.log(t);
+};
+let user2 ;
+console.log(deepCopy(user1));
+console.log(deepCopy(user2));
+
 //
 // let userCopy = {...user};
 // userCopy.name = 'loboska';
-// console.log(userCopy.name);
+// console.log(userCopy);
 // console.log(user);
 
 // #iz6emEsP2BA

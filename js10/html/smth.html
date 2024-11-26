@@ -4,13 +4,36 @@
     <meta charset="UTF-8">
     <title>Title</title>
   <style>
+    div{
+        background: sienna;
+        width: 100px;
+        height: 100px;
+    }
+    span{
+        width: 10px;
+        height: 10px;
+        background: blue;
+        border: black 1px;
+    }
+    input,button{
+        width: 200px;
+        margin:10px
+    }
 
   </style>
 </head>
 <body>
 <input type="number" id="kilos" placeholder="kilos">
 <input type="number" id="pounds" placeholder="pounds">
-
+<h1>--</h1>
+<form action="" id="tableCalc">
+    <input type="number" placeholder="rows" id="rows">
+    <input type="number" placeholder="columns" id="columns">
+    <input type="text" placeholder="info" id="info">
+    <button type="submit">table</button>
+</form>
+<table id="table"></table>
+<div id="smth">100 грн </div>
 <script src="/js/smth.js"></script>
 </body>
 </html>

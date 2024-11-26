@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script >
+    // Є  сторінка sessionsListPage.html (назва довільна),
+    // при відвідуванні якої потрібно відмалювати всю інформацію
+    // про відвідування сторінки index.html.
+    // Інфу НЕ виводити в консоль, а малювати в DOM
+
+    //let sessionList= [];
+    let items = JSON.parse(localStorage.getItem('sessionList'));
+    for(let item of items){
+        let p = document.createElement('p');
+        p.innerText= item;
+        document.body.append(p);
+    }
+</script>
+</body>
+</html>

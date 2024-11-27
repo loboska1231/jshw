@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+        img{
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    // #HmvAfRQM
+    // - взяти https://dummyjson.com/docs/carts та вивести інформацію
+    // про всі корзини. Відобразити всі поля кожної корзини.
+    let url1 = new URL('https://dummyjson.com/carts');
+    fetch(url1)
+        .then(element => element.json())
+        .then(({carts}) =>{
+            console.log(carts);
+            for (const cart of carts) {
+                let div = document.createElement('div');
+                for(let key in cart){
+                    let ul = document.createElement('ul');
+                    if(Array.isArray(cart[key])){
+                        let products = cart[key];
+                        let p =document.createElement('p');
+                        let olForProducts =document.createElement('ol');
+                        products.forEach(product=> {
+                            const{title, thumbnail:image, ...keysOfProduct} = product;
+                            let li = document.createElement('li');
+                            let img = document.createElement('img');
+                            img.src = image;
+                            p.innerText= key;
+                            li.innerText=title;
+                            olForProducts.append(li);
+                            let ulProduct = document.createElement('ul');
+                            for(let productKey in keysOfProduct){
+                                let li = document.createElement('li');
+                                li.innerText = `${productKey}: ${product[productKey]}`;
+                                ulProduct.append(li);
+                                olForProducts.append(ulProduct,img);
+                            }
+                        });
+                        ul.append(p,olForProducts);
+                    }
+                    else{
+                        let li = document.createElement('li');
+                        li.innerText = key+' -- '+cart[key];
+                        ul.append(li);
+                    }
+                    div.append(ul);
+                }
+                document.body.append(div,'NEXT');
+            }
+        });
+</script>
+</body>
+</html>
